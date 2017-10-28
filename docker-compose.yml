@@ -1,14 +1,18 @@
 version: "3"
 services:
   db:
-    image: mysql:latest
+    image: "mysql:latest"
     volumes: 
-      - "./data::/var/lib/mysql"
-    env: MYSQL_ROOT_PASSWORD:123456
+      - "./data:/var/lib/mysql"
+    environment: 
+      - MYSQL_ROOT_PASSWORD:123456
   backend:
-    dockerfile: ./todolist-backend
-    link: db
+    build: "./todolist-backend/"
+    links: 
+      - "db"
     ports: 
       - "8080:8080"
-#  frontend:
-#    dockerfile: ./todolist-frontend
+  frontend:
+    build: "./todolist-frontend/"
+    ports: 
+      - "3000:3000"

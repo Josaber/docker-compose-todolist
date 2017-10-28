@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    request.get('http://192.168.33.30:80/todoitems')
+    request.get('http://192.168.33.50:8080/todoitems')
       .end((err, res) => {
         if (err) {
           return;
