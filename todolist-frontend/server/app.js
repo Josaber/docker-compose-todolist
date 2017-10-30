@@ -9,5 +9,5 @@ app.get('http://backend:8080/', (req, res)=> {
 });
 
 app.listen(3000, ()=> {
-  console.log("Server started: http://192.168.33.50:3000")
+  console.log("Server started: http://192.168.1.4:3000")
 });
